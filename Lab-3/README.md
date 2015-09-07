@@ -77,7 +77,7 @@ Please note that this is a heuristic and sometimes movies with excessive marketi
 
 ***Step 1: Navigate to ML tab in Azure Portal***
 media/new-hdinsight-cluster-settings.png
-![alt tag](media/Lab3%20Images/1%20Setting%20Up%20Azure%20ML%20Instance/2%20AzurePortalNavigateToML.jpg)
+![alt tag](media/1%20Setting%20Up%20Azure%20ML%20Instance/2%20AzurePortalNavigateToML.jpg)
 
 ***Step 2: Create an ML Workspace***
 
@@ -85,19 +85,19 @@ media/new-hdinsight-cluster-settings.png
 * Associate a pre-existing storage account or follow the steps to create your own.
 * Select the South Central U.S. Datacenter
 
-![alt tag](media/Lab3%20Images/1%20Setting%20Up%20Azure%20ML%20Instance/3%20Create%20ML%20WorkSpace.jpg)
+![alt tag](media/1%20Setting%20Up%20Azure%20ML%20Instance/3%20Create%20ML%20WorkSpace.jpg)
 
 ***Step 3: Sign into ML Studio***
-![alt tag](media/Lab3%20Images/1%20Setting%20Up%20Azure%20ML%20Instance/4%20Sign%20In%20to%20ML%20Studio.jpg)
+![alt tag](media/1%20Setting%20Up%20Azure%20ML%20Instance/4%20Sign%20In%20to%20ML%20Studio.jpg)
 
 ##4. Getting Data into an Experiment##
 ***Step 1: Navigate to the Datasets tab in ML Studio and Click New***
 
-![alt tag](media/Lab3%20Images/2%20Getting%20Data%20into%20An%20Experiment/1%20Datasets%20Menu.jpg)
+![alt tag](media/2%20Getting%20Data%20into%20An%20Experiment/1%20Datasets%20Menu.jpg)
 
 ***Step 2: Select from local file***
 
-![alt tag](media/Lab3%20Images/2%20Getting%20Data%20into%20An%20Experiment/2%20New%20Dataset%20From%20Local%20File.jpg)
+![alt tag](media/2%20Getting%20Data%20into%20An%20Experiment/2%20New%20Dataset%20From%20Local%20File.jpg)
 
 ***Step 3: Upload Dataset***
 
@@ -106,26 +106,26 @@ media/new-hdinsight-cluster-settings.png
 * Select Generic CSV File with a header
 * Click the Checkmark
 
-![alt tag](media/Lab3%20Images/2%20Getting%20Data%20into%20An%20Experiment/3%20Upload%20a%20new%20dataset.jpg)
+![alt tag](media/2%20Getting%20Data%20into%20An%20Experiment/3%20Upload%20a%20new%20dataset.jpg)
 
 ***Step 4: Navigate to the Experiments tab in ML Studio and Click New***
 
-![alt tag](media/Lab3%20Images/2%20Getting%20Data%20into%20An%20Experiment/4%20Experiment%20Menu.jpg)
+![alt tag](media/2%20Getting%20Data%20into%20An%20Experiment/4%20Experiment%20Menu.jpg)
 
 ***Step 5: Create a New Blank Experiments***
 
-![alt tag](media/Lab3%20Images/2%20Getting%20Data%20into%20An%20Experiment/5%20New%20Experiment.jpg)
+![alt tag](media/2%20Getting%20Data%20into%20An%20Experiment/5%20New%20Experiment.jpg)
 
 ***Step 6: Name the Experiment and Import Curated Dataset***
 
 * Rename the experiment to Movie Predictor
 * Expand Saved Datasets -> My Datasets and Drag Curated Movie data on to the page
 
-![alt tag](media/Lab3%20Images/2%20Getting%20Data%20into%20An%20Experiment/6%20Name%20Experiment%20and%20Import%20Data.jpg)
+![alt tag](media/2%20Getting%20Data%20into%20An%20Experiment/6%20Name%20Experiment%20and%20Import%20Data.jpg)
 
 ***Step 7: Right Click the Bottom of Dataset and Select Visualize***
 
-![alt tag](media/Lab3%20Images/2%20Getting%20Data%20into%20An%20Experiment/7%20Visualize%20Data.jpg)
+![alt tag](media/2%20Getting%20Data%20into%20An%20Experiment/7%20Visualize%20Data.jpg)
 
 ***Step 8: Visualize your dataset***
 
@@ -134,7 +134,7 @@ media/new-hdinsight-cluster-settings.png
 * On the right side of the screen you will see some analytics and a 'compare to' combobox
 * Set the 'compare to' combo box to a couple different values 
 * Does anything stand out to you? If so keep a note of it.
-![alt tag](media/Lab3%20Images/2%20Getting%20Data%20into%20An%20Experiment/8%20Data%20Visualized.jpg)
+![alt tag](media/2%20Getting%20Data%20into%20An%20Experiment/8%20Data%20Visualized.jpg)
 
 ##5. Data Normalization & Feature Engineering##
 ***Step 1: Get rid of noisy columns***
@@ -151,7 +151,7 @@ In a longer lab we could use some Azure ML's text processing tools to extract se
   * id, imdb_id, release_date, tagline, original_title, overview, title, release_year , runtime, production_companies
 * Click the check button, run the experiment and visualize the results of the projection.
 
-![alt tag](media/Lab3%20Images/3%20Data%20Normalization%20and%20Feature%20Engineering/1%20Get%20Rid%20of%20Noisy%20Columns.jpg)
+![alt tag](media/3%20Data%20Normalization%20and%20Feature%20Engineering/1%20Get%20Rid%20of%20Noisy%20Columns.jpg)
 
 ***Step 2: Clean Missing Data***
 
@@ -168,7 +168,7 @@ Note: Replacing empty values with teh number 0 is not the best technique, but fo
   * revenue, budget
 * Click the check button, run the experiment and visualize the results of the module.
 
-![alt tag](media/Lab3%20Images/3%20Data%20Normalization%20and%20Feature%20Engineering/2%20Clean%20Missing%20Revenue%20and%20Budget%20Data.jpg)
+![alt tag](media/3%20Data%20Normalization%20and%20Feature%20Engineering/2%20Clean%20Missing%20Revenue%20and%20Budget%20Data.jpg)
 
 ***Step 3: Add python script to calculate profit and determine if a movie is in a Franchise***
 
@@ -205,19 +205,19 @@ Now that we have normalized our data it is time to do some feature engineering. 
   ```
 * Run the experiment and visualize the results of the module.
 
-![alt tag](media/Lab3%20Images/3%20Data%20Normalization%20and%20Feature%20Engineering/3%20Python%20Script%20to%20Calculate%20Profit%20and%20Determine%20if%20in%20Collection.jpg)
+![alt tag](media/3%20Data%20Normalization%20and%20Feature%20Engineering/3%20Python%20Script%20to%20Calculate%20Profit%20and%20Determine%20if%20in%20Collection.jpg)
 
 ***Step 4: Remove Revenue to Prevent Overfitting***
 
 Now that we have calculated profitability in our training set, the revenue column will cause the model to over fit. Let’s project this column out of our dataset. Use what you learned in Step #1 combined with the image below to get rid of the revenue data, then run the experiment and visualize the results of the new projection module.
 
-![alt tag](media/Lab3%20Images/3%20Data%20Normalization%20and%20Feature%20Engineering/4%20Remove%20Revenue.jpg)
+![alt tag](media/3%20Data%20Normalization%20and%20Feature%20Engineering/4%20Remove%20Revenue.jpg)
 
 ***Step 5: Process Categorical Features***
 
 * In the visualize data mode from the last projection module select the genre column and compare it to the new profit column. 
 
-![alt tag](media/Lab3%20Images/3%20Data%20Normalization%20and%20Feature%20Engineering/5%20Make%20Categorical%20P1.jpg)
+![alt tag](media/3%20Data%20Normalization%20and%20Feature%20Engineering/5%20Make%20Categorical%20P1.jpg)
 
 You should notice that profit is being measured on a scale from 0 to 1 even though it should be a binary feature. This is because some of our categorical fields are being treated as strings and numbers lets fix that.
 * Expand the Data Transformation and Manipulation tabs and drag a 'Metadata Editor' Module into the experiment.
@@ -229,11 +229,11 @@ You should notice that profit is being measured on a scale from 0 to 1 even thou
 * Select the 'Metadata Editor' again and set the categorical combo box to 'Make Categorical'.
 * Click the check button, run the experiment and visualize the results of the module.
  
-![alt tag](media/Lab3%20Images/3%20Data%20Normalization%20and%20Feature%20Engineering/6%20Make%20Categorical%20P2.jpg)
+![alt tag](media/3%20Data%20Normalization%20and%20Feature%20Engineering/6%20Make%20Categorical%20P2.jpg)
 
 * In the visualize data mode from the last projection module select the genre Column and Compare it to the new profit column.
 
-![alt tag](media/Lab3%20Images/3%20Data%20Normalization%20and%20Feature%20Engineering/7%20Make%20Categorical%20P3.jpg)
+![alt tag](media/3%20Data%20Normalization%20and%20Feature%20Engineering/7%20Make%20Categorical%20P3.jpg)
 
 You should now be able to better gauge the relationship between the different fields and profit. It is time to begin selecting and training our model.
 
@@ -244,7 +244,7 @@ You should now be able to better gauge the relationship between the different fi
 * Select the Split Module, and Enter "**0.7**" in the 'Fraction of rows in the first dataset' Field 
 * The left side of the split is our training set the right side will be our test/validation split
 
-![alt%20tag](media/Lab3%20Images/4%20Classifer%20Selection%20and%20Training/1%20Test%20Train%20Split.jpg)
+![alt%20tag](media/4%20Classifer%20Selection%20and%20Training/1%20Test%20Train%20Split.jpg)
 
 ***Step 2: Test/Validation Split***
 * Expand the Data Transformation and 'Sample and Split' tabs then drag a 'Split' Module into the experiment.
@@ -252,7 +252,7 @@ You should now be able to better gauge the relationship between the different fi
 * Select the Split Module, and Enter "**0.33**" in the 'Fraction of rows in the first dataset' field. 
 * The left side of the split is the validation set the right side is the testing set for parameter sweep.
 
-![alt%20tag](media/Lab3%20Images/4%20Classifer%20Selection%20and%20Training/2%20Test%20Validation%20Split.jpg)
+![alt%20tag](media/4%20Classifer%20Selection%20and%20Training/2%20Test%20Validation%20Split.jpg)
 
 ***Step 3: Model Selection and the Decision Jungle***
 For this model we are going to use a Decision Jungle Classifier which tend to perform very well on categorical datasets like ours. Decision Jungles are the descendant of two earlier  ML classification algorithms, the decision tree and the random forest.
@@ -267,7 +267,7 @@ More recently Microsoft research invented the [Decision Jungle Classification Al
 * Drag the Two-Class Decision Jungle into the experiment
 
 
-![alt%20tag](media/Lab3%20Images/4%20Classifer%20Selection%20and%20Training/3%20Random%20Jungle.jpg)
+![alt%20tag](media/4%20Classifer%20Selection%20and%20Training/3%20Random%20Jungle.jpg)
 
 ***Step 4: Training with Parameter Sweep***
 
@@ -283,7 +283,7 @@ Now that we have selected our model lets train it using parameter sweep.
 * In the text field add the Profit feature, this is the feature we are trying to predict.
 * Run the experiment.
 
-![alt%20tag](media/Lab3%20Images/4%20Classifer%20Selection%20and%20Training/4%20train%20with%20parameter%20sweep.jpg)
+![alt%20tag](media/4%20Classifer%20Selection%20and%20Training/4%20train%20with%20parameter%20sweep.jpg)
 
 Congratulations you have built your first machine learning model! Now let’s see how it well it performs.
  
@@ -296,13 +296,13 @@ In order to evaluate our model the first thing we must do is score it.
 * Drag the 'Score Module' Module into the experiment.
 * Connect the trained model from the 'Sweep Parameters' module and the Testing Set from our Test/Validation Split to the Score Module 
 
-![alt%20tag](media/Lab3%20Images/5%20Benchmarking/1.%20Score%20Model%20p1.jpg)
+![alt%20tag](media/5%20Benchmarking/1.%20Score%20Model%20p1.jpg)
 
 * Run the experiment and visualize the Score results
 * Each row contains a Scored Label and a Scored Probability that tells you how confident the model was of its decision
 * Compare the Scored Labels column to the Profit Column to gauge the accuracy of the model
 
-![alt%20tag](media/Lab3%20Images/5%20Benchmarking/2.%20Score%20Model%20p2.jpg)
+![alt%20tag](media/5%20Benchmarking/2.%20Score%20Model%20p2.jpg)
 
 Note as discussed in the ML 101 section, accuracy can be misleading in order to truly gauge our model perfomance we need to use the Evaluate Model Module
 
@@ -311,13 +311,13 @@ Note as discussed in the ML 101 section, accuracy can be misleading in order to 
 * Expand the Machine Learning  and Evaluate tabs.
 * Drag the 'Evaluate Model' Module into the experiment.
 * Connect the scored data to left side of the Evaluate Model Module
-![alt%20tag](media/Lab3%20Images/5%20Benchmarking/3.%20Evaluate%20Results%20P1.jpg)
+![alt%20tag](media/5%20Benchmarking/3.%20Evaluate%20Results%20P1.jpg)
 
 * Run the experiment and visualize the Evaluate Model results
 * The key things to look at to gauge performance is Accuracy, the RoC Curve and the F1-Score results for more information see the Benchmarking Section of ML 101 at the top of the lab.
 * Note: Results will vary from run to run, because the splits are random,. This is a good thing though as it prevents overfitting.  
 
-![alt%20tag](media/Lab3%20Images/5%20Benchmarking/4.%20Evaluate%20Results%20P2.jpg)
+![alt%20tag](media/5%20Benchmarking/4.%20Evaluate%20Results%20P2.jpg)
 
 ***Challenge how can you make this model better?***
 Here are some tips
@@ -335,12 +335,12 @@ Now that we have a model let’s turn it to a web service and learn how to consu
 * At the bottom right hand corner of the screen click the "Set Up as a Web Service Button"
 * Select Predictive Web Service
 
-![alt%20tag](media/Lab3%20Images/7%20Publishing%20and%20Consuming/1.%20Convert%20Into%20Predictive%20Web%20Service%20P1.jpg)
+![alt%20tag](media/7%20Publishing%20and%20Consuming/1.%20Convert%20Into%20Predictive%20Web%20Service%20P1.jpg)
 
 A new predictive experiment will be generated this is your production experiment
 * Follow the six steps in the tutorial that pops up in ML Studio.
 
-![alt%20tag](media/Lab3%20Images/7%20Publishing%20and%20Consuming/2.%20Convert%20Into%20Predictive%20Web%20Service%20P2.jpg)
+![alt%20tag](media/7%20Publishing%20and%20Consuming/2.%20Convert%20Into%20Predictive%20Web%20Service%20P2.jpg)
 
 ***Step 2: Replace Service Input and Run***
 
@@ -350,11 +350,11 @@ Before you run the predictive experiment and deploy the service we need to make 
 * Replace the service following the instructions in the screenshot below.
 * Run the predictive experiment.
 
-![alt%20tag](media/Lab3%20Images/7%20Publishing%20and%20Consuming/3.%20Repace%20Service%20Input%20and%20Build.jpg)
+![alt%20tag](media/7%20Publishing%20and%20Consuming/3.%20Repace%20Service%20Input%20and%20Build.jpg)
 
 ***Step 3: Click the Deploy Web Service Button***
 
-![alt%20tag](media/Lab3%20Images/7%20Publishing%20and%20Consuming/4.%20Deploy%20the%20Service.jpg)
+![alt%20tag](media/7%20Publishing%20and%20Consuming/4.%20Deploy%20the%20Service.jpg)
 
 
 ***Step 4: Test the Service***
@@ -363,26 +363,26 @@ Congratulations you have now deployed your first predictive machine learning mod
 
 * Click the blue 'Test Button'
 
-![alt%20tag](media/Lab3%20Images/7%20Publishing%20and%20Consuming/5.%20Test%20the%20Service%20Part%201.jpg)
+![alt%20tag](media/7%20Publishing%20and%20Consuming/5.%20Test%20the%20Service%20Part%201.jpg)
 
 * Enter some test data from a known movie, preferably not in our training set.
 * Note you may see a field for the Profit value don't panic this value will not influence the model prediction it is there as a reference option.
 * When done click the check mark
 
-![alt%20tag](media/Lab3%20Images/7%20Publishing%20and%20Consuming/6.%20Test%20the%20Service%20Part%202.jpg)
+![alt%20tag](media/7%20Publishing%20and%20Consuming/6.%20Test%20the%20Service%20Part%202.jpg)
 
 * When the test is done you will see the test result information at the bottom of your the page.
 * The last two values are the prediction and the models confidence
 *  0 = Money Loser, 1 = Profitable
 
-![alt%20tag](media/Lab3%20Images/7%20Publishing%20and%20Consuming/7.%20Test%20the%20Service%20Part%203.jpg)
+![alt%20tag](media/7%20Publishing%20and%20Consuming/7.%20Test%20the%20Service%20Part%203.jpg)
 
 ***Step 5: Consume the Service***
 
 * To consume the service in python click either the "Request/Response" or "Batch Execution" hyperlinks
 * Service Documentation will appear scroll towards the bottom of the page until you see the following
 
-![alt%20tag](media/Lab3%20Images/7%20Publishing%20and%20Consuming/8.%20Consume%20the%20Service%20in%20python.jpg)
+![alt%20tag](media/7%20Publishing%20and%20Consuming/8.%20Consume%20the%20Service%20in%20python.jpg)
 
 * Copy and paste the sample code into your Python, C# or JavaScript project 
 * Replace the Service Api Key with the key that appears on the service endpoint page

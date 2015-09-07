@@ -1,4 +1,7 @@
-﻿import tmdbsimple as tmdb
+#
+# This product uses the TMDb API but is not endorsed or certified by TMDb.
+#
+import tmdbsimple as tmdb
 import csv,time,unicodedata
 
 #headers

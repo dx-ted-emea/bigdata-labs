@@ -1,0 +1,23 @@
+{
+    "name": "DocumentDbIn",
+    "properties": {
+        "published": false,
+        "type": "DocumentDbCollection",
+        "linkedServiceName": "DocumentDbLinkedService",
+        "typeProperties": {
+            "collectionName": "persons"
+        },
+        "availability": {
+            "frequency": "Day",
+            "interval": 1
+        },
+        "policy": {
+            "externalData": {
+                "dataDelay": "00:10:00",
+                "retryInterval": "00:01:00",
+                "retryTimeout": "00:10:00",
+                "maximumRetry": 3
+            }
+        }
+    }
+}

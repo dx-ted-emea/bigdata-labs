@@ -1,0 +1,20 @@
+{
+    "name": "BlobTableOut",
+    "properties": {
+        "published": false,
+        "type": "AzureBlob",
+        "linkedServiceName": "StorageLinkedService",
+        "typeProperties": {
+            "folderPath": "data",
+            "format": {
+                "type": "TextFormat",
+                "columnDelimiter": ",",
+                "nullValue": "NULL"
+            }
+        },
+        "availability": {
+            "frequency": "Day",
+            "interval": 1
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "DocumentDbLinkedService",
+    "properties": {        
+        "type": "DocumentDb",
+        "typeProperties": {
+            "connectionString": "<replace with account connection string>;database=<replace with database name>"
+        }
+    }
+}

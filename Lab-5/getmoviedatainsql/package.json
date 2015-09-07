@@ -1,0 +1,15 @@
+{
+  "name": "getmoviedatainsql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getmoviedatainsql.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http": "^1.0.0",
+    "msnodesql": "~0.2.1"
+  }
+}

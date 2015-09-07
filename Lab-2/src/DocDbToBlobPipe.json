@@ -1,0 +1,43 @@
+{
+    "name": "DocDbToBlobPipe",
+    "properties": {
+        "activities": [
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "DocumentDbCollectionSource",
+                        "query": "SELECT persons.id, persons.name, persons.town FROM persons",
+                        "nestingSeparator": "."
+                    },
+                    "sink": {
+                        "type": "BlobSink",
+                        "blobWriterAddHeader": true,
+                        "writeBatchSize": 1000,
+                        "writeBatchTimeout": "00:00:59"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "DocumentDbIn"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "BlobTableOut"
+                    }
+                ],
+                "policy": {
+                    "concurrency": 3
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "name": "CopyFromDocDbToBlob"
+            }
+        ],
+        "start": "2015-09-01T00:00:00Z",
+        "end": "2015-09-02T00:00:00Z"        
+    }
+}

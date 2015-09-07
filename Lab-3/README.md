@@ -76,8 +76,8 @@ Please note that this is a heuristic and sometimes movies with excessive marketi
 
 
 ***Step 1: Navigate to ML tab in Azure Portal***
-
-![alt tag](./media/Lab3%20Images/1%20Setting%20Up%20Azure%20ML%20Instance/2%20AzurePortalNavigateToML.jpg)
+media/new-hdinsight-cluster-settings.png
+![alt tag](media/Lab3%20Images/1%20Setting%20Up%20Azure%20ML%20Instance/2%20AzurePortalNavigateToML.jpg)
 
 ***Step 2: Create an ML Workspace***
 

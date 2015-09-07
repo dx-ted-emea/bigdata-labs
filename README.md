@@ -8,7 +8,7 @@ These labs are designed to kick start you in how Microsoft Azure works for handl
 
 ##<a href="/Lab-1" target="_blank">Lab 1</a>
 
-Lab 1 will take you on a journey where you will consume and query an incoming live stream of Twitter feeds. You'll learn how Event Hubs provides the perfect input service for many big data scenarios (including many IoT Scenarios), how Even Hubs can be used to query that live stream of incoming data and how you then can consume the end result of those queries.
+Lab 1 will take you on a journey where you will consume and query an incoming live stream of Twitter feeds. You'll learn how Event Hubs provides the perfect input service for many big data scenarios (including many IoT Scenarios), how Event Hubs can be used to query that live stream of incoming data and how you then can consume the end result of those queries.
  
 ##<a href="/Lab-2" target="_blank">Lab 2</a>
 

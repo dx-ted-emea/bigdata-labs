@@ -1,7 +1,7 @@
 #Building Predictive Models With Azure ML Studio to Gain Insight into Movie Data#
 
 ##Prerequisites##
-* [Get a TMDb Api Key] (https://www.themoviedb.org/documentation/api)
+* [Configure TheMovieDB](#configuring-tmdb)
 * [Install Visual Studio 2015 with Python Tooling](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)
 * [Checkout and Run Movie Data Generator Project](/Lab-3/MovieDataGenerator)
 * [Get an Azure Account and Sign In](https://azure.microsoft.com/en-us/pricing/free-trial/)
@@ -398,6 +398,17 @@ Once again congratulations! By completing this lab you have built and consumed y
 *	[Azure Machine Learning (FAQ) Types](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-faq/)
 * [Blog: TechNet Machine Learning Blog](http://blogs.technet.com/b/machinelearning/)
 * [Module Descriptions: Machine Learning Module Descriptions] (https://msdn.microsoft.com/en-us/library/azure/dn906013.aspx)
+
+
+
+## Configuring TMDb
+
+You'll need an API key from [themoviedb.org](http://themoviedb.org). To do this:
+
+* Visit themoviedb.org and sign up for a free account
+* Once signed up, visit `https://www.themoviedb.org/account/<youraccountname>/api/details`.
+  You will see your api key. Copy this key and use it in
+  `MovieDataGenerator.py.`
 
 ```
 **ABOUT THE Author**

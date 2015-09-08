@@ -1,9 +1,23 @@
 #Building Predictive Models With Azure ML Studio to Gain Insight into Movie Data#
 
 ##Prerequisites##
-* [Configure TheMovieDB](#configuring-tmdb)
-* [Install Visual Studio 2015 with Python Tooling](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)
-* [Checkout and Run Movie Data Generator Project](/Lab-3/MovieDataGenerator)
+
+### Configure TheMovieDB
+
+You'll need an API key from [themoviedb.org](http://themoviedb.org). To do this:
+
+* Visit themoviedb.org and sign up for a free account
+* Once signed up, visit `https://www.themoviedb.org/account/<youraccountname>/api/details`.
+  You will see your api key. Copy this key and use it in
+  `MovieDataGenerator.py` (located in the `MovieDataGenerator` folder)
+* Install the `simpletmdb` python package, by running: `pip install simpletmdb` at the command line
+  (this assumes python v2.7.x is installed).
+
+###Next:
+
+* [Install Visual Studio 2015 with Python Tooling](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx) (optional; you can also run
+  the python app from the command-line, assuming you have python 2.7.x installed)
+* Run the `MovieDataGenerator` script to generate the movie data csv file
 * [Get an Azure Account and Sign In](https://azure.microsoft.com/en-us/pricing/free-trial/)
 
 
@@ -401,14 +415,6 @@ Once again congratulations! By completing this lab you have built and consumed y
 
 
 
-## Configuring TMDb
-
-You'll need an API key from [themoviedb.org](http://themoviedb.org). To do this:
-
-* Visit themoviedb.org and sign up for a free account
-* Once signed up, visit `https://www.themoviedb.org/account/<youraccountname>/api/details`.
-  You will see your api key. Copy this key and use it in
-  `MovieDataGenerator.py.`
 
 ```
 **ABOUT THE Author**

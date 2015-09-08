@@ -36,7 +36,7 @@ Azure DocumentDB is a fully-managed NoSQL document database service. You will le
   
    ![alt tag] (./media/addCollection.JPG)
    
-  6. Last step is pulling data into the collection. For this tutorial we will import the into the collection from a cvs file using the [DocumentDB Migration Tool](https://azure.microsoft.com/en-us/documentation/articles/documentdb-import-data/) to import data into the collection. The file can be found under the data folder in this repository ./data/raw_data.csv
+  6. Last step is pulling data into the collection. For this tutorial we will import the into the collection from a csv file using the [DocumentDB Migration Tool](https://azure.microsoft.com/en-us/documentation/articles/documentdb-import-data/) to import data into the collection. The file can be found under the data folder in this repository ./data/raw_data.csv
   
   ![alt tag] (./media/importData.JPG)
   

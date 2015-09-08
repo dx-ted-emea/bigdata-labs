@@ -53,7 +53,7 @@ for pIndex in range (1,int(HighLowNum/5)+1): #there are about 20 results to a pa
         discoverL = tmdb.Discover()
         responseL = discoverT.movie(sort_by='revenue.asc',include_adult=False, page =pIndex)
     
-    print "Page "str(pIndex)
+    print "Page " + str(pIndex)
 
     if (len(topTwoThousand)<HighLowNum):topTwoThousand = topTwoThousand + responseT['results'] 
     if (len(lowTwoThousand)<HighLowNum):lowTwoThousand = lowTwoThousand + responseL['results']

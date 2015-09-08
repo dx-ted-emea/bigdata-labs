@@ -40,7 +40,7 @@ The ML Process can be broken down into the following stages:
  
  *  ***Feature Engineering***: how we **quantify data** for training. The main types of features are numerical, categorical, binary, text, image and inference. In azure ML data scientists often leverage scripts to generate new features. For a good primer in feature engineering see [Feature engineering and selection in Azure Machine Learning](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-feature-selection-and-engineering/)
  
- *   ***Algorithm Selection***: how you **qualify data** the features we select our fed into these models that process them and provide a prediction or forecast. The main types of ML algorithms are Probabilistic, Graph, and Algebraic. For a good primer in how to choose a model see [How to choose algorithms for Microsoft Azure Machine Learning] (https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-choice/). Note: the best models often use the aggregate results of multiple algorithms this is called an **ensemble approach**. Keep in mind that for every algorithm you add there is a trade off in the time it takes to process your input.
+ *   ***Algorithm Selection***: how you **qualify data** the features we selected into using models that process them and provide a prediction or forecast. The main types of ML algorithms are Probabilistic, Graph, and Algebraic. For a good primer in how to choose a model see [How to choose algorithms for Microsoft Azure Machine Learning] (https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-choice/). Note: the best models often use the aggregate results of multiple algorithms this is called an **ensemble approach**. Keep in mind that for every algorithm you add there is a trade off in the time it takes to process your input.
  
  * ***Training and Optimization***: where you feed your data into your model. A common mistake is to train and test your model using your whole dataset. Doing this will lead to Overfitting. To prevent overfitting it is recommended you shuffle all the features in your data set split them into the following three sets:
   - Training Set (60-70%) of your dataset for training your model.
@@ -157,7 +157,7 @@ In a longer lab we could use some Azure ML's text processing tools to extract se
 
 When you visualized the last transformation you probably saw that many of the movies are missing revenue and budget data. This is due to the limitations of TMDb. Luckily we know because we curated our dataset that an overwhelming amount of the missing data belongs to movies that were not successful. To account for this we will use a clean missing data module to replace missing data in these columns with the number 0 so that profit will be calculated as false. 
 
-Note: Replacing empty values with teh number 0 is not the best technique, but for the purposes of this lab it is a quick heuristic that will provide us with better end results than we would get if we did not clean missing values.
+Note: Replacing empty values with the number 0 is not the best technique, but for the purposes of this lab it is a quick heuristic that will provide us with better end results than we would get if we did not clean missing values.
 
 * Expand the Data Transformation and Manipulation tabs then drag a 'Clean Missing Data' Module into the experiment.
 * Connect the Project Columns Module to the Clean Missing Data Module.

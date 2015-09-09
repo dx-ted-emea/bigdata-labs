@@ -148,7 +148,7 @@ In a longer lab we could use some Azure ML's text processing tools to extract se
 * Select the Project Columns Module and Click the "Launch Column Selector" button.
 * In the three combo boxes that appear select Begin with All Columns, Exclude and Column Names.
 * In the TextBox enter the following values:
-  * id, imdb_id, release_date, tagline, original_title, overview, title, release_year , runtime, production_companies
+  * id, imdb_id, release_date, tagline, original_title, overview, title, release_year , runtime, production_countries
 * Click the check button, run the experiment and visualize the results of the projection.
 
 ![alt tag](media/3%20Data%20Normalization%20and%20Feature%20Engineering/1%20Get%20Rid%20of%20Noisy%20Columns.jpg)

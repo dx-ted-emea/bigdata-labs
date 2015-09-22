@@ -59,9 +59,9 @@ Before we get started lets briefly discuss how accounting in Hollywood works sin
 
 In elementary math you may have learned that **Profit = Revenue - Cost**. However since movie studios typically only release their production budget determining movie profitability is not so clear cut.
 
-There are three main overheads in addition to production budget to consider when accounting for movie profit.
+There are three main overheads in addition to the production budget to consider when accounting for movie profit.
 
-* ***Production***:  These are production costs beyond labor, scenery, and material that are not accounted for in the production budget typically tend to be equivalent to an additional 15% of the production budget.
+* ***Production***:  These are production costs beyond labor, scenery, and material that are not accounted for in the production budget typically they tend to be equivalent to an additional 15% of the production budget.
 * ***Distribution***: Most production companies do not deal directly with movie theaters they instead make arrangements with distributers who typically keep around 30% of what they receive from theaters.
 * ***Marketing***: This number varies depending on the movie but tends to be an additional 10% to 15%.
 

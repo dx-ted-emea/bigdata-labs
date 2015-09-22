@@ -57,7 +57,7 @@ The ML Process can be broken down into the following stages:
 
 Before we get started lets briefly discuss how accounting in Hollywood works since it affects how we evaluate box office profits.
 
-In elementary math you may have learned that **Profit = Revenue - Cost**. However since movie studios typically only release their production budget the determining the profitability is not so clear cut.
+In elementary math you may have learned that **Profit = Revenue - Cost**. However since movie studios typically only release their production budget determining movie profitability is not so clear cut.
 
 There are three main overheads in addition to production budget to consider when accounting for movie profit.
 

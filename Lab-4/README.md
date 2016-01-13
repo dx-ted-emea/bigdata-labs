@@ -1,8 +1,8 @@
-#Using HDInsight (Hadoop) together with Scoop to query data and transfer the results to SQL Database
+#Using HDInsight (Hadoop) together with Sqoop to query data and transfer the results to SQL Database
 
 ##Content##
   1. **Prerequisites**
-  2. **What is HDInsight, Hadoop and Scoop?**
+  2. **What is HDInsight, Hadoop and Sqoop?**
   3. **What are we trying to accomplish?**
   4. **Provision an HDInsight Cluster**
   5. **Getting Data into HDInsight**
@@ -27,7 +27,7 @@ Before you begin this tutorial, you must have the following:
   * Azure CLI (a.k.a. Azure Xplat CLI) [installed and configured](https://azure.microsoft.com/en-us/documentation/articles/xplat-cli/) on your Azure subscription
 
 
-##2. What is HDInsight, Hadoop and Scoop?
+##2. What is HDInsight, Hadoop and Sqoop?
 
 ###What is Hadoop in HDInsight?
 
@@ -408,7 +408,7 @@ Possible tools include:
   * Several Console Tools, like FreeTDS
   
  
-We are going to use the approach used in this [Scoop Tutorial](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-use-sqoop-mac-linux/) namely to install FreeTDS on our HDInsight Cluster and from there accessing the SQL Database to create the table.
+We are going to use the approach used in this [Sqoop Tutorial](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-use-sqoop-mac-linux/) namely to install FreeTDS on our HDInsight Cluster and from there accessing the SQL Database to create the table.
  
   * Make sure you are not in the Hive Console anymore (but you should be in the SSH Session still). If you still are in the Hive Console, exit it by executing "exit;". When you are done, execute the following commend to install FreeTDS:
   

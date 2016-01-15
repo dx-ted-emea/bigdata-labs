@@ -147,85 +147,87 @@ Ensure that the name of the input source matches the name of the input you speci
 5. Browse to your sample .JSON file that you downloaded and Select it. 
 6. Select the tick mark button and see the results displayed below the query definition
 
+### Windowing
+
+In applications that process real-time events, a common requirement is to perform some set-based computation (aggregation) or other operations over subsets of events that fall within some period of time. Because the concept of time is a fundamental necessity to complex event-processing systems, it’s important to have a simple way to work with the time component of query logic in the system. In Azure Stream Analytics, these subsets of events are defined through windows to represent groupings by time.
+
+Tumbling windows are a series of fixed-sized, non-overlapping and contiguous time intervals. The following diagram illustrates a stream with a series of events and how they are mapped into 5-second tumbling windows.
+
+When using a sliding window, the system is asked to logically consider all possible windows of a given length. As the number of such windows would be infinite, Azure Stream Analytics instead outputs events only for those points in time when the content of the window actually changes, in other words when an event entered or exists the window.
+
+#### Query to determine the most popular movies based on number of tweets for it
+
+To determine the most popular movies, we will consider the movies that are tweeted about for more than 10 times in the last 5 seconds using a SlidingWindow. The query also demonstrates the aggregation that can be done as part of transformation on the stream. 
+
+1.	Navigate to the “Query” tab from the menu options 
+2.	The Query editor opens up with a sample query. 
+3.	Replace it with this query – 
+		
+		SELECT System.Timestamp as Time, Topic, COUNT(*) as Tweeted
+		FROM inputtweets TIMESTAMP BY CreatedAt
+		GROUP BY SLIDINGWINDOW(second, 5), topic
+		HAVING COUNT(*) > 10
+Ensure that the name of the input source matches the name of the input you specified earlier.
+4.	Select “Test” under the query editor, it prompts for the sample data file 
+5.	Browse to your sample .JSON file that you downloaded and Select it. 
+6.	Select “Rerun” the query to evaluate the query for a next time window 
 
 
-#### Count of tweets by topic: Tumbling window with aggregation
-
-To compare the number of mentions between topics, we'll leverage a [TumblingWindow](https://msdn.microsoft.com/library/azure/dn835055.aspx) to get the count of mentions by topic every 5 seconds.
-
-1.	Change the query in the code editor to:
-
-		SELECT System.Timestamp as Time, Topic, COUNT(*)
-		FROM TwitterStream TIMESTAMP BY CreatedAt
-		GROUP BY TUMBLINGWINDOW(s, 5), Topic
-
-	Note that this query uses the **TIMESTAMP BY** keyword to specify a timestamp field in the payload to be used in the temporal computation.  If this field wasn't specified, the windowing operation would be performed using the time each event arrived at Event Hub.  Learn more under "Arrival Time Vs Application Time" in the [Stream Analytics Query Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx).
-
-	This query also accesses a timestamp for the end of each window with **System.Timestamp**.
-
-2.	Click **RERUN** under the query editor to see the results of the query.
-
-#### Identifying trending topics: Sliding window
+#### Query to determine the number of times a movie is tweeted about in a window of 5 seconds
 
 To identify trending topics we'll look for topics that cross a threshold value for mentions in a given amount of time.  For the purposes of this tutorial, we'll check for topics that are mentioned more than 20 times in the last 5 seconds using a [SlidingWindow](https://msdn.microsoft.com/library/azure/dn835051.aspx).
 
-1.	Change the query in the code editor to:
+1.	Navigate to the “Query” tab from the menu options 
+2.	The Query editor opens up with a sample query. 
+3.	Replace it with this query – 
 
-		SELECT System.Timestamp as Time, Topic, COUNT(*) as Mentions
-		FROM TwitterStream TIMESTAMP BY CreatedAt
-		GROUP BY SLIDINGWINDOW(s, 5), topic
-		HAVING COUNT(*) > 20
-
-2.	Click **RERUN** under the query editor to see the results of the query.
-
-#### Count of mentions: Tumbling window with aggregation
-
-The final query we will test uses a TumblingWindow to obtain the number of mentions for each topic every 5 seconds.
-
-1.	Change the query in the code editor to:
-
-		SELECT System.Timestamp as Time, Topic, COUNT(*)
-		FROM TwitterStream TIMESTAMP BY CreatedAt
-		GROUP BY TUMBLINGWINDOW(s, 5), Topic
-
-2.	Click **RERUN** under the query editor to see the results of the query.
-3.	This is the query we will use for our dashboard.  Click **SAVE** at the bottom of the page.
+		SELECT System.Timestamp as Time, Topic, COUNT(*) as Tweeted
+		FROM inputtweets TIMESTAMP BY CreatedAt
+		GROUP BY TUMBLINGWINDOW(second, 5), topic
+Ensure that the name of the input source matches the name of the input you specified earlier.
+4.	Select “Test” under the query editor, it prompts for the sample data file 
+5.	Browse to your sample .JSON file that you downloaded and Select it. 
+6.	Select “Rerun” the query to evaluate the query for a next time window 
+7.	To use this query to analyze the real time tweets, select “Save” from the menu bar at the bottom 
+8.	Confirm to save, when prompted. 
 
 
 ## Create output sink
 
-Now that we have defined an event stream, an Event Hub input to ingest events, and a query to perform a transformation over the stream, the last step is to define an output sink for the job.  We'll write the aggregated tweet events from our job query to an Azure Blob.  You could also push your results to SQL Database, Table Store or Event Hub, depending on your specific application needs.
+In this step, we will create a Storage Account and a Container to store the aggregated tweets from the Stream Analytics job. 
+It is also feasible to store the results of this job into SQL database, Table Store or Event Hub depending on your specific application needs and the further processing that is required on this aggregated data.
 
 Follow the steps below to create a container for Blob storage, if you don't already have one:
 
-1.	Use an existing Storage account or create a new Storage account by clicking **NEW** > **DATA SERVICES** > **STORAGE** > **QUICK CREATE** > and following the instructions on  the screen.
-2.	Select the Storage account and then click **CONTAINERS** at the top of the page, and then click **ADD**.
-3.	Specify a **NAME** for your container and set its **ACCESS** to Public Blob.
+1.	Navigate to the “Storage” option from the menu options in the left bar
+2.	Select “New” from the menu bar at the bottom and navigate to “Data Services”, “Storage”, “Quick Create”
+3.	Provide the name for the Storage Account, example “bddemostore” and the Region in which it should be created, example “Central US”, we can leave the Replication to the default option of “Geo-Redundant”
+4.	Select “Create Storage Account” at the bottom to complete the creation
+5.	Select the newly created storage account “bddemostore” and navigate to the “Containers” tab from the menu options at the top 
+6.	Select “Create a Container” and provide the name of the container, example “movietrends” and change the “Access” policy to “Public Container” to allow the trends to be easily accessible from other tools and services. 
+7.	Select the tick mark at the bottom to complete the creation 
 
 ## Specify job output
 
-1.	In your Stream Analytics job, click **OUTPUT** at the top of the page, and then click **ADD OUTPUT**. The dialog that opens will walk you through a number of steps to set up your output.
-2.	Select **BLOB STORAGE**, and then click the right button.
-3.	Type or select the following values on the third page:
+1.	Navigate to the “Stream Analytics” option from the menu options in the left bar
+2.	Select the existing stream analytics “bddemostream”, to navigate to the stream options. 
+3.	Select “Outputs” from the menu bar options at the top 
+4.	Select “Add Output” from the menu bar at the bottom 
+5.	Select “BLOB Storage” from the options provided and Select the tick mark to navigate to the next screen. The options given here give you a good picture about the different output stores that you can have for your stream job. 
+6.	Provide the name for the “Output Alias”, example “outputtweets” and Select the storage account created in the previous step, “bddemostore”. Notice that the key will be automatically populated as well as the list of Containers. 
+7.	Select the container we created for the purpose of storing tweets, “movietrends”
+8.	Provide a prefix for the files that will be stored in the BLOB Storage to easily identify it, example “bddemo” and Select the tick mark to navigate to the next screen.
+9.	Select the “Event Serialization Format” as “JSON”, “Encoding” as “UTF8” and “Format” as “Line Separated”. These are the options selected by default as well. 
+10.	Select the tick mark at the bottom to complete the configuration of the Output. 
 
-* **OUTPUT ALIAS**: Enter a friendly name for this job output
-* **SUBSCRIPTION**: If the Blob Storage you created is in the same subscription as the Stream Analytics job, select **Use Storage Account from Current Subscription**.  If your storage is in a different subscription, select **Use Storage Account from Another Subscription** and manually enter information for **STORAGE ACCOUNT**, **STORAGE ACCOUNT KEY**, **CONTAINER**.
-* **STORAGE ACCOUNT**: Select the name of the Storage Account
-* **CONTAINER**: Select the name of the Container
-* **FILENAME PREFIX**: Type in a file prefix to use when writing blob output
-
-4.	Click the right button.
-5.	Specify the following values:
-* **EVENT SERIALIZER FORMAT**: `JSON`
-* **ENCODING**: `UTF8`
-6.	Click the check button to add this source and to verify that Stream Analytics can successfully connect to the storage account.
+Now the Stream Analytics Job is completely configured with the Input, Query and the Output. It is ready to be started to analyze the stream of tweets and store the results. 
 
 ## Start job
 
-Since a job input, query and output have all been specified, we are ready to start the Stream Analytics job.
-
-1.	From the job **DASHBOARD**, click **START** at the bottom of the page.
-2.	In the dialog that appears, select **JOB START TIME**, and then click the checkmark button on the bottom of the dialog. The job status will change to **Starting** and will shortly move to **Running**.
+1.	While you are on the “bddemostream” page, Select “Start” to initiate the job. The job can be started immediately or at a specified time. 
+2.	Leave the selection on “Job Start” and select the tick mark to start the job
+Ensure that the tweeter application is running and generating tweets before you start the stream job. 
+3.	Once the job is started, navigate to the “Storage” option on the left bar, select “bddemostore” and navigate to the “Containers”. Select the container “movietrends” to view the output file generated. 
 
 
 ## View output for sentiment analysis
@@ -237,7 +239,7 @@ Once your job is running and processing the real-time Twitter stream, choose how
 For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
 
 
-## Next steps
+## References 
 
 - [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
 - [Get started using Azure Stream Analytics](stream-analytics-get-started.md)

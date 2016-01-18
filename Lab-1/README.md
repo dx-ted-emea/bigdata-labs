@@ -59,6 +59,7 @@ Follow the steps below to create an Event Hub.
 
 1. Navigate to the [azure management portal](https://portal.azure.com) and sign in to it 
 2. Select “New” from the top left of the screen and Navigate to “Data + Analytics”, “Event Hub”
+![alt tag] (./media/createeventhub.png)
 3. Provide the “Event Hub Name”, example “bddemoeventhub”, select the “Region” and “Namespace Name” will be based on the “Event Hub Name”
 4. Select the newly created Event Hub – “bddemoeventhub”, to move into the options for the event hub. 
 5. Click on “Create Consumer Group” and provide a name for the consumer group, example “bddemotweets”. 

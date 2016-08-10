@@ -323,8 +323,10 @@ Here are some tips
  * Look for API's with more and cleaner data (IMDb for example)
  * Generate a larger representative dataset from TMDb so that there are more data points
  * Combine Studio Branches together for the big companies like Paramount, Disney and Fox.
+ * Use standard deviations of each feature to normalize the different inputs.
  * Add more features using inference techniques and the text analytics tools.
  * Try multiple models and ensemble their Scored Probabilities together
+ 
 
 Now that we have a model let’s turn it to a web service and learn how to consume it in python, javascript and C#
 

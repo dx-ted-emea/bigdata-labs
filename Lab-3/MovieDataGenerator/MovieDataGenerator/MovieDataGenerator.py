@@ -6,7 +6,7 @@ import csv,time,unicodedata
 
 #headers
 tmdb.API_KEY = ''
-HighLowNum = 2000
+HighLowNum = 100 # you can change this number
 firstPass = True
 
 #Basic Api Key Check
@@ -33,7 +33,7 @@ def toAscii(someStr):
 topTwoThousand =[]
 lowTwoThousand =[]
 
-print "Grabbing the HighLowNum Highest and Lowest Grossing Movies from TMDb"
+print "Grabbing the " + str(HighLowNum) + " Highest and Lowest Grossing Movies from TMDb"
 
 for pIndex in range (1,int(HighLowNum/5)+1): #there are about 20 results to a page
 
@@ -45,7 +45,7 @@ for pIndex in range (1,int(HighLowNum/5)+1): #there are about 20 results to a pa
         discoverL = tmdb.Discover()
         responseL = discoverT.movie(sort_by='revenue.asc',include_adult=False, page =pIndex)
     except:
-        time.sleep(10) #TMBb only allows 40 calls every 10 seconds
+        time.sleep(0.1) #TMBb only allows 40 calls every 10 seconds
 
         discoverT = tmdb.Discover()
         responseT = discoverT.movie(sort_by='revenue.desc',include_adult=False, page =pIndex)
@@ -70,7 +70,7 @@ for m in MovieList:
     #Get Full Movie and Credit Data
     try:movie =tmdb.Movies(m['id'])
     except: 
-        time.sleep(10)#TMBb only allows 40 calls every 10 seconds
+        time.sleep(0.1)#TMBb only allows 40 calls every 10 seconds
         movie =tmdb.Movies(m['id'])
            
     credits= movie # clone movie for credits
